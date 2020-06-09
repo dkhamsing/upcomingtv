@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe6-bD-gnM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Our-lv-xyq">
+            <objects>
+                <navigationController id="oe6-bD-gnM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zkm-dD-w5n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wlD-Zd-TVN" kind="relationship" relationship="rootViewController" id="Xge-3r-RP1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFl-hp-Dni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-683" y="121"/>
+        </scene>
+        <!--Upcoming TV-->
+        <scene sceneID="eij-9E-r1D">
+            <objects>
+                <viewController id="wlD-Zd-TVN" customClass="UpcomingViewController" customModule="upcomingtv" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="piW-jF-eaK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XoZ-Dr-1Ci">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wlD-Zd-TVN" id="eSn-kh-jrJ"/>
+                                    <outlet property="delegate" destination="wlD-Zd-TVN" id="XfR-oF-2fi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wjV-yY-W9D" firstAttribute="trailing" secondItem="XoZ-Dr-1Ci" secondAttribute="trailing" id="Z8y-e4-ilI"/>
+                            <constraint firstItem="wjV-yY-W9D" firstAttribute="bottom" secondItem="XoZ-Dr-1Ci" secondAttribute="bottom" id="b06-FB-O9d"/>
+                            <constraint firstItem="XoZ-Dr-1Ci" firstAttribute="leading" secondItem="wjV-yY-W9D" secondAttribute="leading" id="iwI-c4-HYM"/>
+                            <constraint firstItem="XoZ-Dr-1Ci" firstAttribute="top" secondItem="wjV-yY-W9D" secondAttribute="top" id="ygB-XH-gOB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wjV-yY-W9D"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upcoming TV" id="dSv-1F-PsZ">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Suz-wU-nRT">
+                            <connections>
+                                <action selector="addAction:" destination="wlD-Zd-TVN" id="Sh4-nt-VKX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="XoZ-Dr-1Ci" id="LUM-tN-EVT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfq-38-Iut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="121"/>
+        </scene>
+        <!--Upcoming TV-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="AddShowViewController" id="BYZ-38-t0r" customClass="AddShowViewController" customModule="upcomingtv" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gzz-dY-WMV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ToU-QV-clb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pcQ-zb-Fmb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gzz-dY-WMV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BUO-yp-xzc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gzz-dY-WMV" secondAttribute="trailing" id="PYA-65-n8A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gzz-dY-WMV" secondAttribute="bottom" id="YIT-2g-ddT"/>
+                            <constraint firstItem="gzz-dY-WMV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vzP-Ld-y3t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upcoming TV" id="NyW-1b-fpn"/>
+                    <connections>
+                        <outlet property="tableView" destination="gzz-dY-WMV" id="noy-nH-fEW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="784"/>
+        </scene>
+    </scenes>
+</document>
